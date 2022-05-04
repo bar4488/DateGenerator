@@ -1,0 +1,6 @@
+{
+  "appTitle": "date_generator",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
