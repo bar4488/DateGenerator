@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:date_generator/src/models/Weekday.dart';
+import 'package:date_generator/src/models/weekday.dart';
 
 /// A placeholder class that represents an entity or model.
 class Date {
@@ -54,14 +54,14 @@ class Date {
     weekDay = WeekDay.values[calculateWeekDate()];
   }
 
-  static Date generated() {
-    int year = random.nextInt(2000) + 1400;
+  static Date generated({int start = 1400, int end = 3000}) {
+    int year = random.nextInt(end - start) + start;
     int month = random.nextInt(12);
     int hundrends = year ~/ 100;
     int remainder = year % 100;
     bool isLeapYear =
         remainder % 4 == 0 && (remainder != 0 || hundrends % 4 == 0);
-    int maxDays = daysInMonth[month] + (isLeapYear ? 1 : 0);
+    int maxDays = daysInMonth[month] + (month == 1 && isLeapYear ? 1 : 0);
     int day = random.nextInt(maxDays);
 
     return Date(year, month, day);

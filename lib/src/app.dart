@@ -1,6 +1,6 @@
-import 'package:date_generator/src/date_generator/FastestGame.dart';
-import 'package:date_generator/src/date_generator/MainView.dart';
-import 'package:date_generator/src/date_generator/ZenGame.dart';
+import 'package:date_generator/src/date_generator/fastest_game.dart';
+import 'package:date_generator/src/date_generator/main_view.dart';
+import 'package:date_generator/src/date_generator/zen_game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -74,8 +74,8 @@ class MyApp extends StatelessWidget {
                     return const MainView();
                   case FastestGame.routeName:
                     return const FastestGame();
-                  case ZenGame.routeName:
-                    return const ZenGame();
+                  case ZenGamePage.routeName:
+                    return const ZenGamePage();
                   default:
                     return const FastestGame();
                 }

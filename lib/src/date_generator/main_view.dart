@@ -1,9 +1,9 @@
-import 'package:date_generator/src/date_generator/ZenGame.dart';
+import 'package:date_generator/src/date_generator/zen_game.dart';
 import 'package:flutter/material.dart';
 
 import '../settings/settings_view.dart';
-import 'Date.dart';
-import 'FastestGame.dart';
+import '../models/date.dart';
+import 'fastest_game.dart';
 
 /// Displays a list of SampleItems.
 class MainView extends StatelessWidget {
@@ -33,7 +33,7 @@ class MainView extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.restorablePushNamed(context, ZenGame.routeName);
+                Navigator.restorablePushNamed(context, ZenGamePage.routeName);
               },
               child: const Text("Zen"),
             ),
