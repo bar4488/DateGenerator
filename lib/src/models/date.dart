@@ -50,8 +50,11 @@ class Date {
     "December",
   ];
 
-  Date(this.year, this.month, this.day) {
-    weekDay = WeekDay.values[calculateWeekDate()];
+  Date(this.year, this.month, this.day);
+
+  static Date today() {
+    var now = DateTime.now();
+    return Date(now.year, now.month - 1, now.day - 1);
   }
 
   static Date generated({int start = 1400, int end = 3000}) {
@@ -80,11 +83,11 @@ class Date {
     return (specialDay + (day - monthDay)) % 7;
   }
 
-  final int year;
-  final int month;
-  final int day;
+  int year;
+  int month;
+  int day;
 
   String get monthName => monthsNames[month];
 
-  late final WeekDay weekDay;
+  WeekDay get weekDay => WeekDay.values[calculateWeekDate()];
 }

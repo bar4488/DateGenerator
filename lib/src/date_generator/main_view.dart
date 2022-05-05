@@ -1,3 +1,4 @@
+import 'package:date_generator/src/date_generator/date_calculator_widget.dart';
 import 'package:date_generator/src/date_generator/zen_game.dart';
 import 'package:flutter/material.dart';
 
@@ -27,24 +28,36 @@ class MainView extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.restorablePushNamed(context, ZenGamePage.routeName);
-              },
-              child: const Text("Zen"),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: DateCalculatorWidget(),
+          ),
+          Expanded(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.restorablePushNamed(
+                          context, ZenGamePage.routeName);
+                    },
+                    child: const Text("Zen"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.restorablePushNamed(
+                          context, FastestGame.routeName);
+                    },
+                    child: const Text("Fastest!"),
+                  ),
+                ],
+              ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.restorablePushNamed(context, FastestGame.routeName);
-              },
-              child: const Text("Fastest!"),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
