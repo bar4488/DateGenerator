@@ -36,7 +36,7 @@ class _DateCalculatorWidgetState extends State<DateCalculatorWidget> {
                 setState(() {
                   if (int.tryParse(val) != null) {
                     date.year = int.parse(val);
-                    errorDay = false;
+                    errorYear = false;
                   } else {
                     errorYear = true;
                   }
@@ -65,7 +65,7 @@ class _DateCalculatorWidgetState extends State<DateCalculatorWidget> {
                 setState(() {
                   if (int.tryParse(val) != null) {
                     date.month = int.parse(val) - 1;
-                    errorDay = false;
+                    errorMonth = false;
                   } else {
                     errorMonth = true;
                   }
